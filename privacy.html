@@ -26,6 +26,10 @@
     .btn:hover { filter: brightness(1.08); }
     .navlink:hover { color: #F4F5F7 !important; }
     .menu-toggle { display: none; }
+    .triad .ring { transform-box: fill-box; transform-origin: center; animation: triad-float 7s ease-in-out infinite; }
+    .triad .ring-money { animation-delay: -2.3s; } .triad .ring-health { animation-delay: -4.6s; }
+    @keyframes triad-float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-7px); } }
+    @media (prefers-reduced-motion: reduce) { .triad .ring { animation: none; } }
     @media (max-width: 1100px) {
       .pad { padding-left: 40px !important; padding-right: 40px !important; }
       .band { margin-left: 40px !important; margin-right: 40px !important; padding: 48px 40px !important; }
@@ -51,6 +55,9 @@
       .hero h1 { font-size: 40px !important; }
       .hero p { font-size: 17px !important; }
       .hero-text { max-width: 100% !important; }
+      .triad-hero { gap: 24px !important; }
+      .triad { width: 300px !important; }
+      .app-pills .btn { justify-content: flex-start !important; }
       .phones { width: 100% !important; height: auto !important; display: flex !important; justify-content: center !important; gap: 16px !important; }
       .phones > div { position: static !important; flex: 1 1 0; max-width: 220px; }
       .phones .phone { width: 100% !important; height: auto !important; aspect-ratio: 300 / 620; }
