@@ -63,11 +63,11 @@ HEAD = '''<!doctype html>
       .app-pills .btn { justify-content: flex-start !important; }
       .phones { width: 100% !important; height: auto !important; display: flex !important; justify-content: center !important; gap: 16px !important; }
       .phones > div { position: static !important; flex: 1 1 0; max-width: 220px; }
-      .phones .phone { width: 100% !important; height: auto !important; aspect-ratio: 300 / 620; }
+      .phones .phone { width: 100% !important; height: auto !important; aspect-ratio: 300 / 629; }
       .card-foot { flex-direction: column !important; align-items: flex-start !important; gap: 10px !important; }
       .grid2, .grid3 { grid-template-columns: minmax(0, 1fr) !important; }
       .shots { gap: 16px !important; }
-      .shots .phone { width: 46% !important; max-width: 200px !important; height: auto !important; aspect-ratio: 260 / 540; }
+      .shots .phone { width: 46% !important; max-width: 200px !important; height: auto !important; aspect-ratio: 260 / 542; }
       .eq { flex-direction: column !important; gap: 8px !important; align-items: flex-start !important; }
       .eq-left { width: auto !important; font-size: 19px !important; flex-wrap: wrap !important; }
       .eq-sign { display: none !important; }
@@ -252,7 +252,10 @@ def focus_phone():
     </div>'''
     return phone(inner, bg="#0F1420")
 
-def screenshot_phone(src, w=300, h=620):
+SCREEN_RATIO = 874 / 402  # iPhone 17 Pro points; full-screen simulator captures
+
+def screenshot_phone(src, w=300, h=None):
+    h = h or round((w - 20) * SCREEN_RATIO) + 20  # inner image keeps the real screen aspect, no cropping
     return f'''<div class="phone" style="width: {w}px; height: {h}px; border-radius: 44px; background: #1B2130; padding: 10px; box-sizing: border-box; box-shadow: 0 40px 80px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,255,255,0.08);">
   <div style="width: 100%; height: 100%; border-radius: 36px; overflow: hidden; display: flex;">
     <img src="img/{src}" alt="App screenshot" loading="lazy" style="width: 100%; height: 100%; object-fit: cover; object-position: top;">
@@ -445,7 +448,7 @@ def routines():
     </div>
     <span style="font-size: 14px; color: #8E97A8;">Rated 5.0 on the App Store · Requires iOS 17 or later</span>
   </div>
-  <div class="phones" style="position: relative; width: 560px; height: 660px; flex: none;">
+  <div class="phones" style="position: relative; width: 560px; height: 690px; flex: none;">
     <div style="position: absolute; left: 0; top: 40px;">{screenshot_phone("r-timeline.jpg")}</div>
     <div style="position: absolute; left: 260px; top: 0;">{screenshot_phone("r-profiles.jpg")}</div>
   </div>
@@ -457,10 +460,10 @@ def routines():
 </div>
 
 <div class="pad shots" style="padding: 0 80px 96px; display: flex; justify-content: center; gap: 32px; align-items: flex-end;">
-  {screenshot_phone("r-kickstart.jpg", 260, 540)}
-  {screenshot_phone("r-profiles.jpg", 260, 540)}
-  {screenshot_phone("r-today.jpg", 260, 540)}
-  {screenshot_phone("r-timeline.jpg", 260, 540)}
+  {screenshot_phone("r-kickstart.jpg", 260)}
+  {screenshot_phone("r-profiles.jpg", 260)}
+  {screenshot_phone("r-today.jpg", 260)}
+  {screenshot_phone("r-timeline.jpg", 260)}
 </div>
 
 <div class="pad" style="padding: 0 80px 96px; display: flex; flex-direction: column; gap: 32px;">
@@ -537,7 +540,7 @@ def focus():
     </div>
     <span style="font-size: 14px; color: #8E97A8;">Free forever · No ads · No paywall · Rated 5.0 on the App Store</span>
   </div>
-  <div class="phones" style="position: relative; width: 560px; height: 660px; flex: none;">
+  <div class="phones" style="position: relative; width: 560px; height: 690px; flex: none;">
     <div style="position: absolute; left: 0; top: 40px;">{screenshot_phone("f-insights.jpg")}</div>
     <div style="position: absolute; left: 260px; top: 0;">{screenshot_phone("f-today.jpg")}</div>
   </div>
@@ -549,10 +552,10 @@ def focus():
 </div>
 
 <div class="pad shots" style="padding: 0 80px 96px; display: flex; justify-content: center; gap: 32px; align-items: flex-end;">
-  {screenshot_phone("f-today.jpg", 260, 540)}
-  {screenshot_phone("f-share.jpg", 260, 540)}
-  {screenshot_phone("f-reflect.jpg", 260, 540)}
-  {screenshot_phone("f-month.jpg", 260, 540)}
+  {screenshot_phone("f-today.jpg", 260)}
+  {screenshot_phone("f-share.jpg", 260)}
+  {screenshot_phone("f-reflect.jpg", 260)}
+  {screenshot_phone("f-month.jpg", 260)}
 </div>
 
 <div class="band free" style="margin: 0 80px 96px; padding: 64px 72px; border-radius: 32px; background: linear-gradient(135deg, rgba(91,108,255,0.18), rgba(155,92,255,0.10)), #121722; border: 1px solid rgba(255,255,255,0.08); display: flex; gap: 64px; align-items: center; justify-content: space-between;">
