@@ -727,14 +727,306 @@ def story():
 ''' + TAIL
 
 
+# ---------- privacy policies (verbatim from ~/Documents/Apps/*/…privacy… ) ----------
+
+ROUTINES_POLICY = """
+Three Elements Inc ("we," "us," or "our") operates the Celebrity Routines mobile application (the "App" or "Routines"). This Privacy Policy explains how we collect, use, and protect your information when you use our App.
+
+## 1. Information We Collect
+
+### Account Information
+When you sign in using Google or Apple, we receive:
+- Your email address
+- Your name (if provided by the authentication service)
+- A unique user identifier
+
+We do not have access to your Google or Apple account passwords.
+
+### Usage Data
+We collect information about how you use the App:
+- Daily app activity (dates when you open the App)
+- Subscription status and billing cycle information
+- Feature usage patterns
+
+### Device Information
+We may collect:
+- Device type and operating system version
+- App version
+- General location (country/region) for analytics purposes
+
+## 2. How We Use Your Information
+
+We use the information we collect to:
+- Provide and maintain the App
+- Process your subscription and manage your account
+- Track your loyalty program progress (daily app opens)
+- Apply promotional offers and discounts you've earned
+- Send important notifications about your account or subscription
+- Improve and optimize the App experience
+- Respond to your support requests
+
+## 3. Third-Party Services
+
+We use the following third-party services:
+
+### Firebase (Google)
+- Authentication: Securely manages your sign-in
+- Firestore: Stores your activity data and preferences
+- Privacy Policy: https://firebase.google.com/support/privacy
+
+### RevenueCat
+- Manages subscriptions and in-app purchases
+- Privacy Policy: https://www.revenuecat.com/privacy
+
+### Apple App Store
+- Processes payments for subscriptions
+- Privacy Policy: https://www.apple.com/legal/privacy
+
+### Google Sign-In
+- Provides authentication services
+- Privacy Policy: https://policies.google.com/privacy
+
+## 4. Data Retention
+
+We retain your data for as long as your account is active or as needed to provide you services. If you delete your account, we will delete your personal data within 30 days, except where we are required to retain it for legal purposes.
+
+## 5. Data Security
+
+We implement appropriate security measures to protect your personal information, including:
+- Encrypted data transmission (HTTPS/TLS)
+- Secure authentication through Google and Apple
+- Access controls on our database systems
+
+## 6. Your Rights
+
+You have the right to:
+- Access the personal data we hold about you
+- Request correction of inaccurate data
+- Request deletion of your account and data
+- Opt out of promotional communications
+
+To exercise these rights, contact us at support@3elementsinc.com.
+
+## 7. Children's Privacy
+
+The App is not intended for children under 13. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us immediately.
+
+## 8. Changes to This Policy
+
+We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy in the App and updating the "Last Updated" date.
+
+## 9. Contact Us
+
+If you have questions about this Privacy Policy, please contact us:
+
+Three Elements Inc
+Email: support@3elementsinc.com
+
+By using the Routines app, you agree to the collection and use of information in accordance with this Privacy Policy.
+"""
+
+FOCUS_POLICY = """
+## Introduction
+
+Three Elements Inc ("we," "our," or "us") operates the Focus: Daily Goals mobile application ("Focus"). This Privacy Policy explains how we handle your information when you use our app.
+
+## Our Privacy Promise
+
+**We value your privacy 100%.** Focus is designed from the ground up to be completely private. We do not collect, store, transmit, or share any of your personal data. Period.
+
+## Information We Collect
+
+### We Collect Nothing
+
+Focus does not collect any personal information. Specifically, we do **NOT** collect:
+
+- Names, email addresses, or any contact information
+- Location data
+- Device identifiers or advertising IDs
+- Usage analytics or behavioral data
+- Health or fitness data
+- Financial information
+- Browsing history
+- Crash reports or diagnostics
+- Any form of tracking data
+
+### No Accounts Required
+
+Focus does not require account creation. There are no sign-ups, logins, passwords, or user profiles.
+
+### No Third-Party Services
+
+Focus does not use any third-party analytics, advertising, or tracking services. There are:
+
+- No analytics SDKs (no Google Analytics, no Firebase, no Mixpanel)
+- No advertising networks
+- No crash reporting services
+- No social media trackers
+
+### Tip Jar (In-App Purchases)
+
+Focus offers optional one-time tips via Apple's in-app purchase system. If you choose to leave a tip:
+
+- The transaction is processed entirely by Apple through the App Store
+- We do not collect or store your payment information, credit card details, or billing address
+- Apple may share a transaction record with us (purchase date, product, and amount) but no personal identity information
+- Tips are voluntary, never auto-renew, and do not unlock any additional features
+- You can tip as many times as you like
+
+## Data Storage
+
+### On-Device Storage
+
+All your data — goals, streaks, settings, and history — is stored exclusively on your device using Apple's SwiftData framework.
+
+### iCloud Sync
+
+If you have iCloud enabled on your device, Focus uses Apple's CloudKit to sync your data across your Apple devices signed into the same Apple ID. This sync is:
+
+- **Managed entirely by Apple** — we have no access to your iCloud data
+- **Encrypted** — data is encrypted in transit and at rest by Apple
+- **Tied to your Apple ID** — only you can access your data
+- **Optional** — if iCloud is disabled, the app works fully offline with local storage only
+
+We do not operate any servers. We cannot see, access, or retrieve your data from iCloud.
+
+For more information about iCloud privacy, see [Apple's Privacy Policy](https://www.apple.com/legal/privacy/).
+
+## Data Sharing
+
+We do **NOT** sell, trade, rent, or share your data with anyone. There is no data to share because we don't collect any.
+
+## Data Deletion
+
+Since all data is stored on your device and in your personal iCloud account:
+
+- **Delete from device**: Use Settings > Reset All Data within the app to delete all local data
+- **Delete from iCloud**: Deleting the app and removing it from iCloud (Settings > Apple ID > iCloud > Manage Storage) removes all synced data
+- **No request needed**: Since we don't have your data, there's nothing for us to delete
+
+## Children's Privacy
+
+Focus does not collect any personal information from anyone, including children. The app is rated 4+ and is safe for all ages. We comply with the Children's Online Privacy Protection Act (COPPA) and similar regulations by simply not collecting any data.
+
+## Offline Functionality
+
+Focus works 100% offline. No internet connection is required to use any feature of the app. When an internet connection is available and iCloud is enabled, data syncs automatically in the background.
+
+## Changes to This Policy
+
+We may update this Privacy Policy periodically. Any changes will be reflected in the "Last Updated" date at the top of this policy. Since we don't collect email addresses, we recommend checking this policy occasionally.
+
+## Contact Us
+
+For privacy-related questions:
+- Email: support@3elementsinc.com
+- Company: Three Elements Inc
+"""
+
+
+def md_to_html(text, accent):
+    """Tiny converter for the policy markdown above: ##, ###, - lists, **bold**, [t](u), bare URLs/emails."""
+    import html as _html, re as _re
+
+    def inline(s):
+        s = _html.escape(s, quote=False)
+        s = _re.sub(r"\[([^\]]+)\]\((https?://[^)]+)\)", r'<a href="\2" target="_blank" rel="noopener">\1</a>', s)
+        s = _re.sub(r"(?<![\"'>])(https?://[^\s<]+)", r'<a href="\1" target="_blank" rel="noopener">\1</a>', s)
+        s = _re.sub(r"([\w.+-]+@[\w-]+\.[\w.]+)", r'<a href="mailto:\1">\1</a>', s)
+        s = _re.sub(r"\*\*([^*]+)\*\*", r'<strong style="color: #F4F5F7; font-weight: 600;">\1</strong>', s)
+        return s
+
+    P = 'style="font-size: 16px; line-height: 1.75; color: #B7BFCC;"'
+    H2 = 'style="font-size: 22px; font-weight: 700; line-height: 1.2; margin-top: 12px;"'
+    H3 = 'style="font-size: 16px; font-weight: 600; line-height: 1.3; color: #F4F5F7; margin-top: 4px;"'
+    UL = 'style="margin: 0; padding-left: 22px; display: flex; flex-direction: column; gap: 8px; font-size: 16px; line-height: 1.65; color: #B7BFCC;"'
+    LI = f'style="padding-left: 4px;"'
+
+    out, para, items = [], [], []
+
+    def flush_para():
+        if para:
+            out.append(f"<p {P}>{inline(' '.join(para))}</p>")
+            para.clear()
+
+    def flush_list():
+        if items:
+            lis = "".join(f'<li {LI}>{inline(i)}</li>' for i in items)
+            out.append(f'<ul class="policy-list" {UL} data-accent="{accent}">{lis}</ul>')
+            items.clear()
+
+    for raw in text.strip().splitlines():
+        line = raw.rstrip()
+        if not line.strip():
+            flush_para(); flush_list(); continue
+        if line.startswith("### "):
+            flush_para(); flush_list(); out.append(f"<h3 {H3}>{inline(line[4:])}</h3>")
+        elif line.startswith("## "):
+            flush_para(); flush_list(); out.append(f"<h2 {H2}>{inline(line[3:])}</h2>")
+        elif line.startswith("- "):
+            flush_para(); items.append(line[2:])
+        else:
+            flush_list(); para.append(line.strip())
+    flush_para(); flush_list()
+    return "\n".join(out)
+
+
 def privacy():
-    return HEAD.replace("{title}","Privacy Policy — Three Elements Inc.").replace("{desc}","Privacy policy for Three Elements Inc. apps and website.").replace("{slug}","privacy.html") + nav("Privacy") + f'''
-<div class="pad" style="padding: 96px 80px 96px; display: flex; flex-direction: column; gap: 24px; align-items: center;">
-  <div style="max-width: 720px; display: flex; flex-direction: column; gap: 20px;">
-    <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #F2A93B;">Legal</span>
-    <h1 style="font-size: 48px; font-weight: 800; line-height: 1.05;">Privacy Policy</h1>
-    <p style="font-size: 17px; line-height: 1.7; color: #B7BFCC;">[PRIVACY POLICY TEXT — paste the existing policy from 3elementsinc.com/english-privacy-policy here.]</p>
-    <p style="font-size: 15px; line-height: 1.7; color: #8E97A8;">Questions? Email <a href="mailto:support@3elementsinc.com">support@3elementsinc.com</a>.</p>
+    apps = [
+        ("routines", "Celebrity Routines", "img/icon-routines.png", "December 25, 2025", "#F2A93B",
+         "Requires a Google or Apple sign-in and a subscription, so it collects the minimum needed to run your account.",
+         ROUTINES_POLICY),
+        ("focus", "Focus: Daily Goals", "img/icon-focus.png", "March 2026", "#7B7CFF",
+         "Collects nothing. No accounts, no analytics, no servers — your data stays on your device and in your own iCloud.",
+         FOCUS_POLICY),
+    ]
+
+    chips = ""
+    for slug, name, icon, updated, accent, _, _ in apps:
+        chips += f'''<a class="btn" href="#{slug}" style="display: inline-flex; align-items: center; gap: 10px; height: 48px; padding: 0 18px 0 8px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); background: #121722; color: #F4F5F7; font-weight: 600; font-size: 15px;">
+          <img src="{icon}" alt="" width="32" height="32" style="border-radius: 9px;">{name}<span style="color: {accent};">{ICON_ARROW}</span></a>\n'''
+
+    sections = ""
+    for slug, name, icon, updated, accent, blurb, body in apps:
+        sections += f'''
+  <section id="{slug}" class="legal-card" style="scroll-margin-top: 24px; display: flex; flex-direction: column; gap: 24px; padding: 40px; border-radius: 28px; background: #121722; border: 1px solid rgba(255,255,255,0.08); border-top: 3px solid {accent};">
+    <div class="legal-head" style="display: flex; align-items: center; gap: 18px;">
+      <img src="{icon}" alt="{name} app icon" width="64" height="64" style="border-radius: 16px; flex-shrink: 0;">
+      <div style="display: flex; flex-direction: column; gap: 6px; min-width: 0;">
+        <h2 style="font-size: 28px; font-weight: 800; line-height: 1.1;">{name}</h2>
+        <span style="font-size: 13px; color: #8E97A8;">Privacy Policy · Last updated <span style="color: #F4F5F7;">{updated}</span></span>
+      </div>
+    </div>
+    <p style="font-size: 17px; line-height: 1.6; color: #F4F5F7; padding: 16px 20px; border-radius: 16px; background: rgba(255,255,255,0.04); border-left: 3px solid {accent};">{blurb}</p>
+    <div class="policy" style="display: flex; flex-direction: column; gap: 14px;">
+{md_to_html(body, accent)}
+    </div>
+  </section>
+'''
+
+    return HEAD.replace("{title}","Privacy Policy — Three Elements Inc.").replace("{desc}","Privacy policies for Celebrity Routines and Focus: Daily Goals by Three Elements Inc.").replace("{slug}","privacy.html") + nav("Privacy") + f'''
+<style>
+  .policy a {{ overflow-wrap: anywhere; }}
+  .policy-list li::marker {{ color: #8E97A8; }}
+  .policy-list[data-accent="#F2A93B"] li::marker {{ color: #F2A93B; }}
+  .policy-list[data-accent="#7B7CFF"] li::marker {{ color: #9B5CFF; }}
+  @media (max-width: 820px) {{
+    .legal-card {{ padding: 28px 20px !important; border-radius: 22px !important; }}
+    .legal-head h2 {{ font-size: 24px !important; }}
+    .legal-wrap {{ gap: 28px !important; }}
+  }}
+</style>
+<div class="pad" style="padding: 80px 80px 96px; display: flex; flex-direction: column; align-items: center;">
+  <div class="legal-wrap" style="width: 100%; max-width: 820px; display: flex; flex-direction: column; gap: 40px;">
+    <div style="display: flex; flex-direction: column; gap: 18px;">
+      <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #F2A93B;">Legal</span>
+      <h1 style="font-size: 52px; font-weight: 800; line-height: 1.05;">Privacy Policy</h1>
+      <p style="font-size: 18px; line-height: 1.65; color: #B7BFCC; max-width: 640px;">Three Elements Inc. makes two iPhone apps, and each has its own privacy policy. Jump to the app you use — both are written to be read, not skimmed past.</p>
+      <div class="btn-row" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px;">
+{chips}      </div>
+    </div>
+{sections}
+    <p style="font-size: 15px; line-height: 1.7; color: #8E97A8;">Questions about either policy? Email <a href="mailto:support@3elementsinc.com">support@3elementsinc.com</a>. Three Elements Inc. · Bay Area, California.</p>
   </div>
 </div>
 {FOOTER}
