@@ -449,7 +449,7 @@ def routines():
     <span style="font-size: 14px; color: #8E97A8;">Rated 5.0 on the App Store · Requires iOS 17 or later</span>
   </div>
   <div class="phones" style="position: relative; width: 560px; height: 690px; flex: none;">
-    <div style="position: absolute; left: 0; top: 40px;">{screenshot_phone("r-today.jpg")}</div>
+    <div style="position: absolute; left: 0; top: 40px;">{screenshot_phone("r-now.jpg")}</div>
     <div style="position: absolute; left: 260px; top: 0;">{screenshot_phone("r-profile.jpg")}</div>
   </div>
 </div>
