@@ -449,8 +449,8 @@ def routines():
     <span style="font-size: 14px; color: #8E97A8;">Rated 5.0 on the App Store · Requires iOS 17 or later</span>
   </div>
   <div class="phones" style="position: relative; width: 560px; height: 690px; flex: none;">
-    <div style="position: absolute; left: 0; top: 40px;">{screenshot_phone("r-timeline.jpg")}</div>
-    <div style="position: absolute; left: 260px; top: 0;">{screenshot_phone("r-profiles.jpg")}</div>
+    <div style="position: absolute; left: 0; top: 40px;">{screenshot_phone("r-today.jpg")}</div>
+    <div style="position: absolute; left: 260px; top: 0;">{screenshot_phone("r-profile.jpg")}</div>
   </div>
 </div>
 
@@ -460,10 +460,10 @@ def routines():
 </div>
 
 <div class="pad shots" style="padding: 0 80px 96px; display: flex; justify-content: center; gap: 32px; align-items: flex-end;">
-  {screenshot_phone("r-kickstart.jpg", 260)}
-  {screenshot_phone("r-profiles.jpg", 260)}
-  {screenshot_phone("r-today.jpg", 260)}
-  {screenshot_phone("r-timeline.jpg", 260)}
+  {screenshot_phone("r-routines.jpg", 260)}
+  {screenshot_phone("r-plan.jpg", 260)}
+  {screenshot_phone("r-ledger.jpg", 260)}
+  {screenshot_phone("r-milestone.jpg", 260)}
 </div>
 
 <div class="pad" style="padding: 0 80px 96px; display: flex; flex-direction: column; gap: 32px;">
