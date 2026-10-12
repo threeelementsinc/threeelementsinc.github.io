@@ -322,11 +322,11 @@ def cta_band():
 <div id="get" class="grain band" style="margin: 0 80px 96px; padding: 72px; border-radius: 32px; background: radial-gradient(120% 140% at 10% 0%, rgba(242,169,59,0.28) 0%, rgba(242,169,59,0) 55%), radial-gradient(90% 120% at 100% 100%, rgba(91,108,255,0.28) 0%, rgba(91,108,255,0) 60%), #121722; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: space-between; gap: 48px;">
   <div style="display: flex; flex-direction: column; gap: 14px; max-width: 620px;">
     <h2 style="font-size: 40px; font-weight: 700; line-height: 1.1;">Start with one routine. Or just three goals.</h2>
-    <p style="font-size: 18px; line-height: 1.6; color: #B7BFCC;">Both apps are on the App Store for iPhone. Routines comes with a 7-day free trial. Focus is free, forever.</p>
+    <p style="font-size: 18px; line-height: 1.6; color: #B7BFCC;">Both apps are on the App Store for iPhone. Both are free, forever.</p>
   </div>
   <div class="btn-row" style="display: flex; flex-direction: column; gap: 12px; flex: none;">
     {primary_btn("Get Celebrity Routines", "https://apps.apple.com/us/app/celebrity-routines/id6755641471")}
-    {ghost_btn("Get Focus — it's free", "https://apps.apple.com/us/app/focus-daily-goals/id6760952606")}
+    {ghost_btn("Get Focus", "https://apps.apple.com/us/app/focus-daily-goals/id6760952606")}
   </div>
 </div>
 '''
@@ -354,8 +354,8 @@ def home():
   </div>
   <div class="checks" style="display: flex; align-items: center; justify-content: center; gap: 28px; color: #8E97A8; font-size: 14px; flex-wrap: wrap;">
     <span style="display: inline-flex; align-items: center; gap: 8px;">{ICON_CHECK}600+ routines</span>
-    <span style="display: inline-flex; align-items: center; gap: 8px;">{ICON_CHECK}7-day free trial</span>
-    <span style="display: inline-flex; align-items: center; gap: 8px;">{ICON_CHECK}Focus is completely free</span>
+    <span style="display: inline-flex; align-items: center; gap: 8px;">{ICON_CHECK}Both apps are free</span>
+    <span style="display: inline-flex; align-items: center; gap: 8px;">{ICON_CHECK}No ads, nothing renews</span>
   </div>
 </div>
 
@@ -365,14 +365,14 @@ def home():
     <div style="display: flex; flex-direction: column; gap: 22px; padding: 40px; border-radius: 28px; background: #121722; border: 1px solid rgba(255,255,255,0.06);">
       <div style="display: flex; align-items: center; justify-content: space-between;">
         <img src="img/icon-routines.png" alt="Celebrity Routines app icon" style="width: 64px; height: 64px; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.4);">
-        <span style="font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: rgba(242,169,59,0.14); color: #F2A93B;">7-day free trial</span>
+        <span style="font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: rgba(242,169,59,0.14); color: #F2A93B;">Free forever</span>
       </div>
       <div style="display: flex; flex-direction: column; gap: 8px;">
         <h3 style="font-size: 30px; font-weight: 700;">Celebrity Routines</h3>
         <p style="font-size: 17px; line-height: 1.6; color: #B7BFCC;">The daily habits of 600+ athletes, founders, musicians, authors and leaders — wake times, workouts, work blocks, principles and book picks. Build your own routine from the ones that fit you.</p>
       </div>
       <div class="card-foot" style="display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 8px;">
-        <span style="font-size: 15px; color: #8E97A8;">Premium from <strong style="color: #F4F5F7;">$6.99/mo</strong> billed yearly</span>
+        <span style="font-size: 15px; color: #8E97A8;">Free, with an optional <strong style="color: #F4F5F7;">tip jar</strong></span>
         <a href="routines.html" style="display: inline-flex; align-items: center; gap: 8px; color: #F2A93B; font-weight: 600; font-size: 15px;">Explore Routines {ICON_ARROW}</a>
       </div>
     </div>
@@ -431,20 +431,20 @@ def routines():
         ("Quotes and book picks", "What they read, and the lines they keep coming back to."),
         ("Career turning points", "The moments that changed everything, and the lessons they took from them."),
         ("Build your own routine", "Borrow the pieces that fit you and assemble a day that's yours."),
-        ("Request new profiles", "Premium members can request the people they want added next."),
+        ("Request new profiles", "Tell us who should be added next and we'll research them."),
     ]
     fgrid = "".join(f'''<div style="display: flex; flex-direction: column; gap: 10px; padding: 28px; border-radius: 20px; background: #121722; border: 1px solid rgba(255,255,255,0.06);">
       <h3 style="font-size: 20px; font-weight: 700;">{t}</h3>
       <p style="font-size: 15px; line-height: 1.6; color: #B7BFCC;">{d}</p>
     </div>''' for t, d in feats)
-    return HEAD.replace("{title}","Celebrity Routines — daily routines of the world's best | Three Elements").replace("{desc}","Browse 600+ daily routines from athletes, founders, musicians and leaders, then build your own. 7-day free trial on iPhone.").replace("{slug}","routines.html") + nav("Routines") + f'''
+    return HEAD.replace("{title}","Celebrity Routines — daily routines of the world's best | Three Elements").replace("{desc}","Browse 600+ daily routines from athletes, founders, musicians and leaders, then build your own. Free on iPhone.").replace("{slug}","routines.html") + nav("Routines") + f'''
 <div class="grain hero" style="position: relative; overflow: hidden; padding: 96px 80px 80px; display: flex; align-items: center; justify-content: space-between; gap: 60px; background: radial-gradient(70% 90% at 85% 30%, rgba(242,169,59,0.2) 0%, rgba(242,169,59,0) 60%), #0A0D14;">
   <div class="hero-text" style="display: flex; flex-direction: column; gap: 26px; max-width: 640px; position: relative; z-index: 1;">
     <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #F2A93B;">Celebrity Routines · for iPhone</span>
     <h1 style="font-size: 68px; font-weight: 800; line-height: 1.04;">How the world's best actually spend their day.</h1>
     <p style="font-size: 20px; line-height: 1.6; color: #B7BFCC; max-width: 560px;">Browse the daily routines of 600+ people like Elon Musk, Oprah Winfrey, LeBron James and Taylor Swift — then build your own from the pieces that work for you.</p>
     <div class="btn-row" style="display: flex; gap: 14px; flex-wrap: wrap;">
-      {primary_btn("Start 7-day free trial", "https://apps.apple.com/us/app/celebrity-routines/id6755641471")}
+      {primary_btn("Download free", "https://apps.apple.com/us/app/celebrity-routines/id6755641471")}
     </div>
     <span style="font-size: 14px; color: #8E97A8;">Rated 5.0 on the App Store · Requires iOS 17 or later</span>
   </div>
@@ -471,44 +471,18 @@ def routines():
   <div style="display: flex; flex-wrap: wrap; gap: 12px;">{chips}</div>
 </div>
 
-<div class="pad" style="padding: 0 80px 96px; display: flex; flex-direction: column; gap: 40px; align-items: center;">
-  {section_heading("Pricing", "Try everything free for 7 days.", "Browse for free. Premium unlocks all 600+ profiles, exclusive content and profile requests. Cancel anytime.", align="center")}
-  <div class="pricing" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; width: 880px; max-width: 100%;">
-    <div style="display: flex; flex-direction: column; gap: 22px; padding: 40px; border-radius: 28px; background: #121722; border: 2px solid #F2A93B; position: relative;">
-      <span style="position: absolute; top: -14px; left: 32px; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; padding: 6px 12px; border-radius: 999px; background: #F2A93B; color: #0A0D14;">Best value · Save 30%</span>
-      <div style="display: flex; flex-direction: column; gap: 6px;">
-        <h3 style="font-size: 22px; font-weight: 700;">Yearly</h3>
-        <div style="display: flex; align-items: baseline; gap: 6px;">
-          <span style="font-family: Sora, Helvetica, Arial, sans-serif; font-size: 56px; font-weight: 800; letter-spacing: -0.03em;">$84</span>
-          <span style="font-size: 16px; color: #8E97A8;">/year</span>
-        </div>
-        <span style="font-size: 15px; color: #5FD3A6; font-weight: 600;">About $6.99 a month</span>
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: #B7BFCC;">
-        <span style="display: flex; align-items: center; gap: 10px;">{ICON_CHECK}All 600+ profiles</span>
-        <span style="display: flex; align-items: center; gap: 10px;">{ICON_CHECK}Request new profiles</span>
-        <span style="display: flex; align-items: center; gap: 10px;">{ICON_CHECK}7-day free trial, cancel anytime</span>
-      </div>
-      {primary_btn("Start free trial", "https://apps.apple.com/us/app/celebrity-routines/id6755641471")}
-    </div>
-    <div style="display: flex; flex-direction: column; gap: 22px; padding: 40px; border-radius: 28px; background: #121722; border: 1px solid rgba(255,255,255,0.08);">
-      <div style="display: flex; flex-direction: column; gap: 6px;">
-        <h3 style="font-size: 22px; font-weight: 700;">Monthly</h3>
-        <div style="display: flex; align-items: baseline; gap: 6px;">
-          <span style="font-family: Sora, Helvetica, Arial, sans-serif; font-size: 56px; font-weight: 800; letter-spacing: -0.03em;">$9.99</span>
-          <span style="font-size: 16px; color: #8E97A8;">/month</span>
-        </div>
-        <span style="font-size: 15px; color: #8E97A8;">Billed monthly</span>
-      </div>
-      <div style="display: flex; flex-direction: column; gap: 12px; font-size: 15px; color: #B7BFCC;">
-        <span style="display: flex; align-items: center; gap: 10px;">{ICON_CHECK}All 600+ profiles</span>
-        <span style="display: flex; align-items: center; gap: 10px;">{ICON_CHECK}Request new profiles</span>
-        <span style="display: flex; align-items: center; gap: 10px;">{ICON_CHECK}7-day free trial, cancel anytime</span>
-      </div>
-      {ghost_btn("Start free trial", "https://apps.apple.com/us/app/celebrity-routines/id6755641471")}
-    </div>
+<div class="band free" style="margin: 0 80px 96px; padding: 64px 72px; border-radius: 32px; background: linear-gradient(135deg, rgba(242,169,59,0.18), rgba(242,169,59,0.06)), #121722; border: 1px solid rgba(255,255,255,0.08); display: flex; gap: 64px; align-items: center; justify-content: space-between;">
+  <div style="display: flex; flex-direction: column; gap: 18px; max-width: 640px;">
+    <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #F2A93B;">Why it's free</span>
+    <h2 style="font-size: 40px; font-weight: 700; line-height: 1.1;">All 600+ routines. No paywall.</h2>
+    <p style="font-size: 18px; line-height: 1.6; color: #B7BFCC;">Routines is our way of giving back, the same as Focus. Every profile, Autopilot, the Ledger and the Keeper are free for everyone. Nothing is locked and nothing auto-renews. If it helps you and you'd like to support more apps like it, there's a tip jar in the You tab. No pressure at all.</p>
   </div>
-  <p style="font-size: 13px; color: #5C6578; text-align: center; max-width: 560px;">Trial requires a payment method. You'll be charged at the end of the 7 days unless you cancel. Manage or cancel in your Apple ID settings.</p>
+  <div class="free-list" style="display: flex; flex-direction: column; gap: 10px; flex: none; width: 300px;">
+    <div style="display: flex; justify-content: space-between; padding: 14px 18px; border-radius: 14px; background: rgba(255,255,255,0.05);"><span style="font-weight: 500;">Coffee</span><span style="color: #F2A93B; font-weight: 600;">$1.99</span></div>
+    <div style="display: flex; justify-content: space-between; padding: 14px 18px; border-radius: 14px; background: rgba(255,255,255,0.05);"><span style="font-weight: 500;">Pizza</span><span style="color: #F2A93B; font-weight: 600;">$4.99</span></div>
+    <div style="display: flex; justify-content: space-between; padding: 14px 18px; border-radius: 14px; background: rgba(255,255,255,0.05);"><span style="font-weight: 500;">Dinner</span><span style="color: #F2A93B; font-weight: 600;">$14.99</span></div>
+    <span style="font-size: 13px; color: #8E97A8; text-align: center; margin-top: 6px;">Tips never auto-renew. You're always in control.</span>
+  </div>
 </div>
 
 {cta_band()}
@@ -755,7 +729,6 @@ We do not have access to your Google or Apple account passwords.
 ### Usage Data
 We collect information about how you use the App:
 - Daily app activity (dates when you open the App)
-- Subscription status and billing cycle information
 - Feature usage patterns
 
 ### Device Information
@@ -768,10 +741,8 @@ We may collect:
 
 We use the information we collect to:
 - Provide and maintain the App
-- Process your subscription and manage your account
-- Track your loyalty program progress (daily app opens)
-- Apply promotional offers and discounts you've earned
-- Send important notifications about your account or subscription
+- Manage your account
+- Send important notifications about your account
 - Improve and optimize the App experience
 - Respond to your support requests
 
@@ -784,17 +755,22 @@ We use the following third-party services:
 - Firestore: Stores your activity data and preferences
 - Privacy Policy: https://firebase.google.com/support/privacy
 
-### RevenueCat
-- Manages subscriptions and in-app purchases
-- Privacy Policy: https://www.revenuecat.com/privacy
-
 ### Apple App Store
-- Processes payments for subscriptions
+- Processes optional tips (one-time in-app purchases)
 - Privacy Policy: https://www.apple.com/legal/privacy
 
 ### Google Sign-In
 - Provides authentication services
 - Privacy Policy: https://policies.google.com/privacy
+
+### Tip Jar (In-App Purchases)
+
+Routines is free. It offers optional one-time tips through Apple's in-app purchase system. If you choose to leave a tip:
+- The transaction is processed entirely by Apple through the App Store
+- We do not collect or store your payment information, credit card details, or billing address
+- Apple may share a transaction record with us (purchase date, product, and amount) but no personal identity information
+- Tips are voluntary, never auto-renew, and do not unlock any additional features
+- You can tip as many times as you like
 
 ## 4. Data Retention
 
@@ -983,8 +959,8 @@ def md_to_html(text, accent):
 
 def privacy():
     apps = [
-        ("routines", "Celebrity Routines", "img/icon-routines.png", "December 25, 2025", "#F2A93B",
-         "Requires a Google or Apple sign-in and a subscription, so it collects the minimum needed to run your account.",
+        ("routines", "Celebrity Routines", "img/icon-routines.png", "October 12, 2026", "#F2A93B",
+         "Requires a Google or Apple sign-in, so it collects the minimum needed to run your account. Free, with an optional tip jar.",
          ROUTINES_POLICY),
         ("focus", "Focus: Daily Goals", "img/icon-focus.png", "March 2026", "#7B7CFF",
          "Collects nothing. No accounts, no analytics, no servers — your data stays on your device and in your own iCloud.",
