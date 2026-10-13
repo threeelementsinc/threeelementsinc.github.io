@@ -121,7 +121,7 @@ LOGO = '''<div style="display: flex; align-items: center; gap: 12px;">
 </div>'''
 
 def nav(active):
-    items = [("Home", "Home", "index.html"), ("Routines", "Routines", "routines.html"), ("Focus", "Focus", "focus.html"), ("Our Story", "OurStory", "our-story.html")]
+    items = [("Home", "Home", "index.html"), ("Routines", "Routines", "routines.html"), ("Focus", "Focus", "focus.html"), ("Purse", "Purse", "purse.html"), ("Our Story", "OurStory", "our-story.html")]
     links = ""
     for label, key, href in items:
         color = "#F4F5F7" if key == active else "#8E97A8"
@@ -164,6 +164,7 @@ FOOTER = f'''
       <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #8E97A8;">Apps</span>
       <a href="https://apps.apple.com/us/app/celebrity-routines/id6755641471" style="color: #F4F5F7; font-size: 15px;">Celebrity Routines</a>
       <a href="https://apps.apple.com/us/app/focus-daily-goals/id6760952606" style="color: #F4F5F7; font-size: 15px;">Focus: Daily Goals</a>
+      <a href="purse.html" style="color: #F4F5F7; font-size: 15px;">Purse <span style="color: #8E97A8; font-size: 13px;">· coming soon</span></a>
     </div>
     <div style="display: flex; flex-direction: column; gap: 12px;">
       <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: #8E97A8;">Company</span>
@@ -322,7 +323,7 @@ def cta_band():
 <div id="get" class="grain band" style="margin: 0 80px 96px; padding: 72px; border-radius: 32px; background: radial-gradient(120% 140% at 10% 0%, rgba(242,169,59,0.28) 0%, rgba(242,169,59,0) 55%), radial-gradient(90% 120% at 100% 100%, rgba(91,108,255,0.28) 0%, rgba(91,108,255,0) 60%), #121722; border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: space-between; gap: 48px;">
   <div style="display: flex; flex-direction: column; gap: 14px; max-width: 620px;">
     <h2 style="font-size: 40px; font-weight: 700; line-height: 1.1;">Start with one routine. Or just three goals.</h2>
-    <p style="font-size: 18px; line-height: 1.6; color: #B7BFCC;">Both apps are on the App Store for iPhone. Both are free, forever.</p>
+    <p style="font-size: 18px; line-height: 1.6; color: #B7BFCC;">Routines and Focus are on the App Store for iPhone, free forever. Purse is coming soon.</p>
   </div>
   <div class="btn-row" style="display: flex; flex-direction: column; gap: 12px; flex: none;">
     {primary_btn("Get Celebrity Routines", "https://apps.apple.com/us/app/celebrity-routines/id6755641471")}
@@ -334,7 +335,7 @@ def cta_band():
 # ---------- pages ----------
 
 def home():
-    return HEAD.replace("{title}","Three Elements Inc. — iPhone apps for Time, Money and Health").replace("{desc}","Three Elements builds small, beautiful iPhone apps: Celebrity Routines and Focus: Daily Goals. Master your time, grow every element of your life.").replace("{slug}","") + nav("Home") + f'''
+    return HEAD.replace("{title}","Three Elements Inc. — iPhone apps for Time, Money and Health").replace("{desc}","Three Elements builds small, beautiful iPhone apps: Celebrity Routines, Focus: Daily Goals and Purse. All free. Master your time, grow every element of your life.").replace("{slug}","") + nav("Home") + f'''
 <div class="grain hero triad-hero" style="position: relative; overflow: hidden; padding: 72px 80px 88px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 32px; background: radial-gradient(45% 55% at 50% 28%, rgba(242,169,59,0.14) 0%, rgba(242,169,59,0) 70%), radial-gradient(35% 45% at 36% 46%, rgba(95,211,166,0.10) 0%, rgba(95,211,166,0) 70%), radial-gradient(35% 45% at 64% 46%, rgba(240,103,140,0.10) 0%, rgba(240,103,140,0) 70%), #0A0D14;">
   <svg class="triad" viewBox="0 0 440 360" width="440" height="360" role="img" aria-label="Three overlapping rings labelled Time, Money and Health" style="display: block; max-width: 100%; height: auto; overflow: visible;">
     <defs>
@@ -351,17 +352,18 @@ def home():
   <div class="btn-row app-pills" style="display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; position: relative; z-index: 1;">
     <a class="btn" href="https://apps.apple.com/us/app/celebrity-routines/id6755641471" style="display: inline-flex; align-items: center; gap: 12px; height: 60px; padding: 0 22px 0 10px; border-radius: 999px; background: #121722; border: 1px solid rgba(255,255,255,0.1); color: #F4F5F7; font-weight: 600; font-size: 16px;"><img src="img/icon-routines.png" alt="" width="40" height="40" style="border-radius: 11px;">Celebrity Routines<span style="color: #F2A93B; display: inline-flex;">{ICON_ARROW}</span></a>
     <a class="btn" href="https://apps.apple.com/us/app/focus-daily-goals/id6760952606" style="display: inline-flex; align-items: center; gap: 12px; height: 60px; padding: 0 22px 0 10px; border-radius: 999px; background: #121722; border: 1px solid rgba(255,255,255,0.1); color: #F4F5F7; font-weight: 600; font-size: 16px;"><img src="img/icon-focus.png" alt="" width="40" height="40" style="border-radius: 11px;">Focus: Daily Goals<span style="color: #9B5CFF; display: inline-flex;">{ICON_ARROW}</span></a>
+    <a class="btn" href="purse.html" style="display: inline-flex; align-items: center; gap: 12px; height: 60px; padding: 0 22px 0 10px; border-radius: 999px; background: #121722; border: 1px solid rgba(255,255,255,0.1); color: #F4F5F7; font-weight: 600; font-size: 16px;"><img src="img/icon-purse.png" alt="" width="40" height="40" style="border-radius: 11px;">Purse<span style="font-size: 12px; color: #8E97A8;">soon</span><span style="color: #E3B341; display: inline-flex;">{ICON_ARROW}</span></a>
   </div>
   <div class="checks" style="display: flex; align-items: center; justify-content: center; gap: 28px; color: #8E97A8; font-size: 14px; flex-wrap: wrap;">
     <span style="display: inline-flex; align-items: center; gap: 8px;">{ICON_CHECK}600+ routines</span>
-    <span style="display: inline-flex; align-items: center; gap: 8px;">{ICON_CHECK}Both apps are free</span>
+    <span style="display: inline-flex; align-items: center; gap: 8px;">{ICON_CHECK}All three are free</span>
     <span style="display: inline-flex; align-items: center; gap: 8px;">{ICON_CHECK}No ads, nothing renews</span>
   </div>
 </div>
 
 <div class="pad" style="padding: 40px 80px 96px; display: flex; flex-direction: column; gap: 40px;">
-  {section_heading("The apps", "Two apps. One philosophy.", "Each one does a single thing well and stays out of your way.")}
-  <div class="grid2" style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px;">
+  {section_heading("The apps", "Three apps. One philosophy.", "Each one does a single thing well and stays out of your way.")}
+  <div class="grid3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px;">
     <div style="display: flex; flex-direction: column; gap: 22px; padding: 40px; border-radius: 28px; background: #121722; border: 1px solid rgba(255,255,255,0.06);">
       <div style="display: flex; align-items: center; justify-content: space-between;">
         <img src="img/icon-routines.png" alt="Celebrity Routines app icon" style="width: 64px; height: 64px; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.4);">
@@ -383,11 +385,25 @@ def home():
       </div>
       <div style="display: flex; flex-direction: column; gap: 8px;">
         <h3 style="font-size: 30px; font-weight: 700;">Focus: Daily Goals</h3>
-        <p style="font-size: 17px; line-height: 1.6; color: #B7BFCC;">What if you only had to focus on three things today? Set three goals, check them off, and watch streaks compound into real change. No ads, no paywall, no locked features.</p>
+        <p style="font-size: 17px; line-height: 1.6; color: #B7BFCC;">Three small things a day, ticked off, and the Ember: a little flame you keep alight by showing up. It burns brighter with every perfect day and never goes out.</p>
       </div>
       <div class="card-foot" style="display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 8px;">
         <span style="font-size: 15px; color: #8E97A8;"><strong style="color: #F4F5F7;">$0</strong> — our way of giving back</span>
         <a href="focus.html" style="display: inline-flex; align-items: center; gap: 8px; color: #F2A93B; font-weight: 600; font-size: 15px;">Explore Focus {ICON_ARROW}</a>
+      </div>
+    </div>
+    <div style="display: flex; flex-direction: column; gap: 22px; padding: 40px; border-radius: 28px; background: #121722; border: 1px solid rgba(255,255,255,0.06);">
+      <div style="display: flex; align-items: center; justify-content: space-between;">
+        <img src="img/icon-purse.png" alt="Purse app icon" style="width: 64px; height: 64px; border-radius: 16px; box-shadow: 0 8px 24px rgba(0,0,0,0.4);">
+        <span style="font-size: 13px; font-weight: 600; padding: 6px 12px; border-radius: 999px; background: rgba(227,179,65,0.14); color: #E3B341;">Coming soon</span>
+      </div>
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <h3 style="font-size: 30px; font-weight: 700;">Purse</h3>
+        <p style="font-size: 17px; line-height: 1.6; color: #B7BFCC;">Don't log what you spent. Keep what you didn't. Make a small money pledge, tick it each evening, and watch the jar fill with what stayed in your pocket.</p>
+      </div>
+      <div class="card-foot" style="display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: 8px;">
+        <span style="font-size: 15px; color: #8E97A8;">Free, with an optional <strong style="color: #F4F5F7;">tip jar</strong></span>
+        <a href="purse.html" style="display: inline-flex; align-items: center; gap: 8px; color: #F2A93B; font-weight: 600; font-size: 15px;">Explore Purse {ICON_ARROW}</a>
       </div>
     </div>
   </div>
@@ -492,31 +508,31 @@ def routines():
 
 def focus():
     feats = [
-        ("Three goals a day", "Intentional limitation. Three gradient cards, three checkboxes, nothing else competing for your attention."),
-        ("Streaks that compound", "Complete all three and the streak grows. Miss a day and you start again — honestly."),
-        ("A year at a glance", "A heat map of every day this year, so consistency is something you can see."),
-        ("Weekly and monthly insights", "How often you finish, when you slip, and what a good week looks like for you."),
-        ("End-of-day reflection", "A quick vibe check before bed. 365 unique daily messages to go with it."),
-        ("Share your progress", "Insight cards you can post or send when a streak is worth celebrating."),
+        ("Three things a day", "Small ones count. The point is the tick at the end of the day, not the size of the thing. Three is the limit on purpose."),
+        ("The Ember", "A little flame you keep alight by showing up. It burns brighter with every perfect day, dims on a miss, and never goes out."),
+        ("Moments that land", "First tick, perfect day, day three, day seven, a hundred in a row. Each one gets its own screen, sound and shower of sparks, once."),
+        ("A year at a glance", "Every square is a day. Amber is a perfect one. Your best chain and your best month, with nothing to be embarrassed by."),
+        ("One nudge each morning", "A single line about what today holds. Ignore it for three weeks and it stops on its own. No guilt loops."),
+        ("Evening reflection", "How did today go, in one tap, and tomorrow's three while you still remember what mattered. Moods stay on your phone."),
     ]
     fgrid = "".join(f'''<div style="display: flex; flex-direction: column; gap: 10px; padding: 28px; border-radius: 20px; background: #121722; border: 1px solid rgba(255,255,255,0.06);">
       <h3 style="font-size: 20px; font-weight: 700;">{t}</h3>
       <p style="font-size: 15px; line-height: 1.6; color: #B7BFCC;">{d}</p>
     </div>''' for t, d in feats)
-    return HEAD.replace("{title}","Focus: Daily Goals — three goals a day, free forever | Three Elements").replace("{desc}","A beautifully simple daily goal app. Set three goals, build streaks, see a year at a glance. Free, no ads, no paywall.").replace("{slug}","focus.html") + nav("Focus") + f'''
-<div class="grain hero" style="position: relative; overflow: hidden; padding: 96px 80px 80px; display: flex; align-items: center; justify-content: space-between; gap: 60px; background: radial-gradient(70% 90% at 85% 30%, rgba(91,108,255,0.24) 0%, rgba(91,108,255,0) 60%), #0A0D14;">
+    return HEAD.replace("{title}","Focus: Daily Goals — three things a day, and an Ember | Three Elements").replace("{desc}","Set three small goals a day, tick them off, and keep the Ember alight. A year at a glance, an evening reflection, no account. Free, no ads, no paywall.").replace("{slug}","focus.html") + nav("Focus") + f'''
+<div class="grain hero" style="position: relative; overflow: hidden; padding: 96px 80px 80px; display: flex; align-items: center; justify-content: space-between; gap: 60px; background: radial-gradient(70% 90% at 85% 30%, rgba(242,169,59,0.22) 0%, rgba(242,169,59,0) 60%), #0A0D14;">
   <div class="hero-text" style="display: flex; flex-direction: column; gap: 26px; max-width: 640px; position: relative; z-index: 1;">
     <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #9B9CFF;">Focus: Daily Goals · iPhone</span>
-    <h1 style="font-size: 68px; font-weight: 800; line-height: 1.04;">What if you only had to focus on three things today?</h1>
-    <p style="font-size: 20px; line-height: 1.6; color: #B7BFCC; max-width: 560px;">Focus is a beautifully simple daily goal app built on one idea: intentional limitation. Set three goals, check them off, and build streaks that turn into real change.</p>
+    <h1 style="font-size: 68px; font-weight: 800; line-height: 1.04;">Three things a day. And a flame you keep alight.</h1>
+    <p style="font-size: 20px; line-height: 1.6; color: #B7BFCC; max-width: 560px;">Set three small goals each morning and tick them off. The Ember burns a little brighter with every perfect day, dims when you miss, and never goes out. That's the whole app.</p>
     <div class="btn-row" style="display: flex; gap: 14px; flex-wrap: wrap;">
       <a class="btn" href="https://apps.apple.com/us/app/focus-daily-goals/id6760952606" style="display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 26px; border-radius: 999px; background: linear-gradient(135deg, #5B6CFF, #9B5CFF); color: #FFFFFF; font-weight: 600; font-size: 16px;">{ICON_DL}Download free</a>
     </div>
-    <span style="font-size: 14px; color: #8E97A8;">Free forever · No ads · No paywall · Rated 5.0 on the App Store</span>
+    <span style="font-size: 14px; color: #8E97A8;">Free forever · No account · No ads · Rated 5.0 on the App Store</span>
   </div>
   <div class="phones" style="position: relative; width: 560px; height: 690px; flex: none;">
-    <div style="position: absolute; left: 0; top: 40px;">{screenshot_phone("f-insights.jpg")}</div>
-    <div style="position: absolute; left: 260px; top: 0;">{screenshot_phone("f-today.jpg")}</div>
+    <div style="position: absolute; left: 0; top: 40px;">{screenshot_phone("f2-year.jpg")}</div>
+    <div style="position: absolute; left: 260px; top: 0;">{screenshot_phone("f2-today.jpg")}</div>
   </div>
 </div>
 
@@ -526,22 +542,84 @@ def focus():
 </div>
 
 <div class="pad shots" style="padding: 0 80px 96px; display: flex; justify-content: center; gap: 32px; align-items: flex-end;">
-  {screenshot_phone("f-today.jpg", 260)}
-  {screenshot_phone("f-share.jpg", 260)}
-  {screenshot_phone("f-reflect.jpg", 260)}
-  {screenshot_phone("f-month.jpg", 260)}
+  {screenshot_phone("f2-welcome.jpg", 260)}
+  {screenshot_phone("f2-moment.jpg", 260)}
+  {screenshot_phone("f2-evening.jpg", 260)}
+  {screenshot_phone("f2-you.jpg", 260)}
 </div>
 
 <div class="band free" style="margin: 0 80px 96px; padding: 64px 72px; border-radius: 32px; background: linear-gradient(135deg, rgba(91,108,255,0.18), rgba(155,92,255,0.10)), #121722; border: 1px solid rgba(255,255,255,0.08); display: flex; gap: 64px; align-items: center; justify-content: space-between;">
   <div style="display: flex; flex-direction: column; gap: 18px; max-width: 640px;">
     <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #9B9CFF;">Why it's free</span>
     <h2 style="font-size: 40px; font-weight: 700; line-height: 1.1;">Everything you see is everything you get.</h2>
-    <p style="font-size: 18px; line-height: 1.6; color: #B7BFCC;">Focus is our way of giving back. No ads, no paywalls, no locked features — and nothing that auto-renews. If it helps you and you'd like to support more apps like it, there's a tip jar in Settings. No pressure at all.</p>
+    <p style="font-size: 18px; line-height: 1.6; color: #B7BFCC;">Focus is our way of giving back. No ads, no paywalls, no locked features, nothing that auto-renews, and no account to make. If it helps you and you'd like to support more apps like it, there's a tip jar in the You tab. No pressure at all.</p>
   </div>
   <div class="free-list" style="display: flex; flex-direction: column; gap: 10px; flex: none; width: 300px;">
     <div style="display: flex; justify-content: space-between; padding: 14px 18px; border-radius: 14px; background: rgba(255,255,255,0.05);"><span style="font-weight: 500;">Coffee</span><span style="color: #9B9CFF; font-weight: 600;">$1.99</span></div>
     <div style="display: flex; justify-content: space-between; padding: 14px 18px; border-radius: 14px; background: rgba(255,255,255,0.05);"><span style="font-weight: 500;">Pizza</span><span style="color: #9B9CFF; font-weight: 600;">$4.99</span></div>
     <div style="display: flex; justify-content: space-between; padding: 14px 18px; border-radius: 14px; background: rgba(255,255,255,0.05);"><span style="font-weight: 500;">Dinner</span><span style="color: #9B9CFF; font-weight: 600;">$14.99</span></div>
+    <span style="font-size: 13px; color: #8E97A8; text-align: center; margin-top: 6px;">Tips never auto-renew. You're always in control.</span>
+  </div>
+</div>
+
+{cta_band()}
+{FOOTER}
+''' + TAIL
+
+
+def purse():
+    feats = [
+        ("Make a pledge", "\u201cNo delivery food for 3 days, about $22 a night.\u201d Pick one from the deck or write your own. Three days is a promise you'll actually keep."),
+        ("Tick it each evening", "Kept or slipped. That's the only daily action. No number pad, no receipts, no categories to remember."),
+        ("Watch the jar", "Kept days drop coins in. A slip ends your chain but never the jar. What you didn't spend, by month and by habit."),
+        ("The number is yours", "The amount per kept day is your own estimate, and Purse says so. It's a motivational number, not an accounting one."),
+        ("Nothing leaves your phone", "No account, no sign-up, no bank links, no analytics. Pledges live on your device and in your own iCloud."),
+        ("Share the month", "One card: what you kept and your best chain. Dollar amount optional, for the shy."),
+    ]
+    fgrid = "".join(f'''<div style="display: flex; flex-direction: column; gap: 10px; padding: 28px; border-radius: 20px; background: #121722; border: 1px solid rgba(255,255,255,0.06);">
+      <h3 style="font-size: 20px; font-weight: 700;">{t}</h3>
+      <p style="font-size: 15px; line-height: 1.6; color: #B7BFCC;">{d}</p>
+    </div>''' for t, d in feats)
+    tip = lambda n, pr: f'<div style="display: flex; justify-content: space-between; padding: 14px 18px; border-radius: 14px; background: rgba(255,255,255,0.05);"><span style="font-weight: 500;">{n}</span><span style="color: #E3B341; font-weight: 600;">{pr}</span></div>'
+    return HEAD.replace("{title}","Purse — keep the money you didn't spend | Three Elements").replace("{desc}","Don't log what you spent. Keep what you didn't. Make a small money pledge, tick it each evening, and watch the jar fill. No account, no bank links. Free, coming soon to iPhone.").replace("{slug}","purse.html") + nav("Purse") + f'''
+<div class="grain hero" style="position: relative; overflow: hidden; padding: 96px 80px 80px; display: flex; align-items: center; justify-content: space-between; gap: 60px; background: radial-gradient(70% 90% at 85% 30%, rgba(227,179,65,0.22) 0%, rgba(227,179,65,0) 60%), #0A0D14;">
+  <div class="hero-text" style="display: flex; flex-direction: column; gap: 26px; max-width: 640px; position: relative; z-index: 1;">
+    <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #E3B341;">Purse · iPhone · coming soon</span>
+    <h1 style="font-size: 68px; font-weight: 800; line-height: 1.04;">Don't log what you spent. Keep what you didn't.</h1>
+    <p style="font-size: 20px; line-height: 1.6; color: #B7BFCC; max-width: 560px;">Every spending app asks you to type in money after it's gone. Purse asks one question before: what are you not doing for the next few days? Pledge it, tick it each evening, and watch the jar fill with what stayed in your pocket.</p>
+    <div class="btn-row" style="display: flex; gap: 14px; flex-wrap: wrap; align-items: center;">
+      <span style="display: inline-flex; align-items: center; gap: 10px; height: 52px; padding: 0 26px; border-radius: 999px; background: rgba(227,179,65,0.14); color: #E3B341; font-weight: 600; font-size: 16px; border: 1px solid rgba(227,179,65,0.3);">Coming soon to the App Store</span>
+    </div>
+    <span style="font-size: 14px; color: #8E97A8;">Free forever · No account · No bank links · Requires iOS 17 or later</span>
+  </div>
+  <div class="phones" style="position: relative; width: 560px; height: 690px; flex: none;">
+    <div style="position: absolute; left: 0; top: 40px;">{screenshot_phone("p-jar.jpg")}</div>
+    <div style="position: absolute; left: 260px; top: 0;">{screenshot_phone("p-today.jpg")}</div>
+  </div>
+</div>
+
+<div class="pad" style="padding: 40px 80px 96px; display: flex; flex-direction: column; gap: 40px;">
+  {section_heading("How it works", "A pledge is a promise with a number on it.")}
+  <div class="grid3" style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px;">{fgrid}</div>
+</div>
+
+<div class="pad shots" style="padding: 0 80px 96px; display: flex; justify-content: center; gap: 32px; align-items: flex-end;">
+  {screenshot_phone("p-welcome.jpg", 260)}
+  {screenshot_phone("p-deck.jpg", 260)}
+  {screenshot_phone("p-kept.jpg", 260)}
+  {screenshot_phone("p-you.jpg", 260)}
+</div>
+
+<div class="band free" style="margin: 0 80px 96px; padding: 64px 72px; border-radius: 32px; background: linear-gradient(135deg, rgba(227,179,65,0.18), rgba(227,179,65,0.06)), #121722; border: 1px solid rgba(255,255,255,0.08); display: flex; gap: 64px; align-items: center; justify-content: space-between;">
+  <div style="display: flex; flex-direction: column; gap: 18px; max-width: 640px;">
+    <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #E3B341;">Why it's free</span>
+    <h2 style="font-size: 40px; font-weight: 700; line-height: 1.1;">Keeping money shouldn't cost money.</h2>
+    <p style="font-size: 18px; line-height: 1.6; color: #B7BFCC;">Purse is our way of giving back, the same as Routines and Focus. Every pledge, the jar, the widget and the share card are free for everyone. Nothing is locked and nothing auto-renews. If it helps you and you'd like to support more apps like it, there's a tip jar in the You tab. No pressure at all.</p>
+  </div>
+  <div class="free-list" style="display: flex; flex-direction: column; gap: 10px; flex: none; width: 300px;">
+    {tip("Coffee","$1.99")}
+    {tip("Pizza","$4.99")}
+    {tip("Dinner","$14.99")}
     <span style="font-size: 13px; color: #8E97A8; text-align: center; margin-top: 6px;">Tips never auto-renew. You're always in control.</span>
   </div>
 </div>
@@ -616,6 +694,11 @@ def story():
         <img src="img/icon-focus.png" alt="Focus app icon" style="width: 52px; height: 52px; border-radius: 14px;">
         <div style="display: flex; flex-direction: column; gap: 2px;"><span style="font-family: Sora, Helvetica, Arial, sans-serif; font-weight: 700; font-size: 17px;">Focus: Daily Goals</span><span style="font-size: 14px; color: #8E97A8;">Three things a day, free forever</span></div>
         <span style="margin-left: auto; color: #F2A93B;">{ICON_ARROW}</span>
+      </a>
+      <a href="purse.html" style="display: flex; align-items: center; gap: 16px; padding: 18px 20px; border-radius: 20px; background: #121722; border: 1px solid rgba(255,255,255,0.08); color: #F4F5F7;">
+        <img src="img/icon-purse.png" alt="Purse app icon" style="width: 52px; height: 52px; border-radius: 14px;">
+        <div style="display: flex; flex-direction: column; gap: 2px;"><span style="font-family: Sora, Helvetica, Arial, sans-serif; font-weight: 700; font-size: 17px;">Purse</span><span style="font-size: 14px; color: #8E97A8;">Keep what you didn't spend · coming soon</span></div>
+        <span style="margin-left: auto; color: #E3B341;">{ICON_ARROW}</span>
       </a>
     </div>'''
 
@@ -811,6 +894,76 @@ Email: support@3elementsinc.com
 By using the Routines app, you agree to the collection and use of information in accordance with this Privacy Policy.
 """
 
+PURSE_POLICY = """
+Three Elements Inc ("we," "our," or "us") makes the Purse app. This policy explains what happens to your information when you use it. The short version: nothing leaves your device except through your own iCloud.
+
+## What Purse stores
+
+Purse stores your pledges, the days you ticked kept or slipped, your estimate of what each kept day is worth, and your settings. That is all. There is no spend log, no bank data, no income, no bills.
+
+## The amounts are your estimates
+
+When you start a pledge you type a guess, such as "about $22 a night". The jar adds those guesses up. It is a motivational number, not an accounting one, and Purse never checks it against anything.
+
+## What we collect
+
+- No names, email addresses, or contact details
+- No location
+- No device identifiers or advertising IDs
+- No analytics or usage tracking
+- No crash reports
+- No financial data of any kind
+
+Purse has no accounts, no sign-up, and no servers of ours.
+
+## Where your data lives
+
+Everything is stored on your device with Apple's SwiftData. If iCloud is on, Apple's CloudKit syncs it between your own devices signed into the same Apple ID. That sync is run by Apple, encrypted by Apple, and tied to your Apple ID. We cannot see it, read it, or retrieve it. If iCloud is off, the app works fully offline.
+
+For more on iCloud privacy, see [Apple's Privacy Policy](https://www.apple.com/legal/privacy/).
+
+## No bank links
+
+Purse never connects to a bank, a card, or a payment service. The "Move to savings" button only schedules a reminder on your phone. Moving money is something you do yourself, in your own bank app.
+
+## Tip Jar (In-App Purchases)
+
+Purse is free. It offers optional one-time tips through Apple's in-app purchase system. If you choose to leave a tip:
+
+- The transaction is processed entirely by Apple through the App Store
+- We do not collect or store your payment information, card details, or billing address
+- Apple may share a transaction record with us (purchase date, product, and amount) but no personal identity information
+- Tips are voluntary, never auto-renew, and do not unlock any features
+- You can tip as many times as you like
+
+## Notifications
+
+If you turn on the evening check-in, Purse schedules one local notification a day on your device. The "Move to savings" reminder is a single local notification. Nothing is sent from a server.
+
+## Deleting your data
+
+- **On the device**: You, then Erase everything, inside the app
+- **In iCloud**: delete the app and remove it from iCloud (Settings > Apple ID > iCloud > Manage Storage)
+- **No request needed**: there is nothing for us to delete because we never had it
+
+## Children's Privacy
+
+Purse collects no personal information from anyone, including children. The app is rated 4+.
+
+## Changes to This Policy
+
+We may update this policy. The date at the top changes when we do.
+
+## Contact Us
+
+- Email: support@3elementsinc.com
+- Company: Three Elements Inc
+
+---
+
+© 2026 Three Elements Inc. All rights reserved.
+"""
+
 FOCUS_POLICY = """
 ## Introduction
 
@@ -965,6 +1118,9 @@ def privacy():
         ("focus", "Focus: Daily Goals", "img/icon-focus.png", "March 2026", "#7B7CFF",
          "Collects nothing. No accounts, no analytics, no servers — your data stays on your device and in your own iCloud.",
          FOCUS_POLICY),
+        ("purse", "Purse", "img/icon-purse.png", "October 12, 2026", "#E3B341",
+         "Collects nothing. No account, no bank links, no analytics. Pledges live on your device and in your own iCloud, and every amount is your own estimate.",
+         PURSE_POLICY),
     ]
 
     chips = ""
@@ -990,12 +1146,13 @@ def privacy():
   </section>
 '''
 
-    return HEAD.replace("{title}","Privacy Policy — Three Elements Inc.").replace("{desc}","Privacy policies for Celebrity Routines and Focus: Daily Goals by Three Elements Inc.").replace("{slug}","privacy.html") + nav("Privacy") + f'''
+    return HEAD.replace("{title}","Privacy Policy — Three Elements Inc.").replace("{desc}","Privacy policies for Celebrity Routines, Focus: Daily Goals and Purse by Three Elements Inc.").replace("{slug}","privacy.html") + nav("Privacy") + f'''
 <style>
   .policy a {{ overflow-wrap: anywhere; }}
   .policy-list li::marker {{ color: #8E97A8; }}
   .policy-list[data-accent="#F2A93B"] li::marker {{ color: #F2A93B; }}
   .policy-list[data-accent="#7B7CFF"] li::marker {{ color: #9B5CFF; }}
+  .policy-list[data-accent="#E3B341"] li::marker {{ color: #E3B341; }}
   @media (max-width: 820px) {{
     .legal-card {{ padding: 28px 20px !important; border-radius: 22px !important; }}
     .legal-head h2 {{ font-size: 24px !important; }}
@@ -1007,12 +1164,12 @@ def privacy():
     <div style="display: flex; flex-direction: column; gap: 18px;">
       <span style="font-size: 13px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #F2A93B;">Legal</span>
       <h1 style="font-size: 52px; font-weight: 800; line-height: 1.05;">Privacy Policy</h1>
-      <p style="font-size: 18px; line-height: 1.65; color: #B7BFCC; max-width: 640px;">Three Elements Inc. makes two iPhone apps, and each has its own privacy policy. Jump to the app you use — both are written to be read, not skimmed past.</p>
+      <p style="font-size: 18px; line-height: 1.65; color: #B7BFCC; max-width: 640px;">Three Elements Inc. makes three iPhone apps, and each has its own privacy policy. Jump to the app you use. All three are written to be read, not skimmed past.</p>
       <div class="btn-row" style="display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px;">
 {chips}      </div>
     </div>
 {sections}
-    <p style="font-size: 15px; line-height: 1.7; color: #8E97A8;">Questions about either policy? Email <a href="mailto:support@3elementsinc.com">support@3elementsinc.com</a>. Three Elements Inc. · Bay Area, California.</p>
+    <p style="font-size: 15px; line-height: 1.7; color: #8E97A8;">Questions about any of these? Email <a href="mailto:support@3elementsinc.com">support@3elementsinc.com</a>. Three Elements Inc. · Bay Area, California.</p>
   </div>
 </div>
 {FOOTER}
@@ -1021,7 +1178,7 @@ def privacy():
 if __name__ == "__main__":
     import os
     os.makedirs("site/img", exist_ok=True)
-    for fname, fn in [("index.html", home), ("routines.html", routines), ("focus.html", focus), ("our-story.html", story), ("privacy.html", privacy)]:
+    for fname, fn in [("index.html", home), ("routines.html", routines), ("focus.html", focus), ("purse.html", purse), ("our-story.html", story), ("privacy.html", privacy)]:
         with open(f"site/{fname}", "w") as f:
             f.write(fn())
         print("wrote", fname)
