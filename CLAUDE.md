@@ -28,7 +28,6 @@ Render pages headlessly before pushing, at desktop and phone widths, for example
   --window-size=1280,3200 --screenshot=out.png file://$PWD/site/routines.html
 ```
 
-## Current state
+## Notes
 
-- All three apps are described as free with an optional tip jar.
-- `purse.html` says "Coming soon" until Purse is live on the App Store; then swap in the App Store link.
+- `purse.html` shows "Coming soon" until Purse is live on the App Store, then the App Store link.
